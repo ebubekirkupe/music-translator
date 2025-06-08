@@ -1,0 +1,462 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+/* Login Screen */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.login-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #1DB954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.spotify-login-btn {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spotify-login-btn:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.language-select {
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.language-select option {
+  background: #1a1a2e;
+}
+
+.logout-btn {
+  padding: 8px 20px;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Track Info */
+.track-info {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.album-art {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.track-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.track-details h2 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+}
+
+.track-details p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0 0 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #1DB954;
+  transition: width 0.3s ease;
+}
+
+/* No Track */
+.no-track {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.no-track p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.hint {
+  opacity: 0.6;
+  font-size: 1.2rem !important;
+}
+
+/* Lyrics */
+.lyrics-container {
+  min-height: 300px;
+}
+
+.current-lyric, .next-lyric {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+.current-lyric .lyric-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1DB954;
+}
+
+.current-lyric .lyric-translation {
+  font-size: 1.8rem;
+  opacity: 0.9;
+}
+
+.next-lyric {
+  opacity: 0.5;
+}
+
+.next-lyric .lyric-text {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.next-lyric .lyric-translation {
+  font-size: 1.3rem;
+}
+
+/* Error */
+.error {
+  color: #ff6b6b;
+  margin-top: 20px;
+}
+
+.error-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 15px 20px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .track-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .current-lyric .lyric-text {
+    font-size: 1.5rem;
+  }
+  
+  .current-lyric .lyric-translation {
+    font-size: 1.3rem;
+  }
+}
+
+/* Platform Selector */
+.platform-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.platform-btn {
+  flex: 1;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.platform-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.platform-btn.active {
+  background: #1DB954;
+  border-color: #1DB954;
+}
+
+.platform-switch-btn {
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.platform-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* YouTube Search */
+.youtube-search {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.youtube-search-input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.youtube-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.youtube-search-input:focus {
+  outline: none;
+  border-color: #ff0000;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.youtube-search-btn {
+  padding: 15px 30px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.youtube-search-btn:hover:not(:disabled) {
+  background: #cc0000;
+  transform: scale(1.05);
+}
+
+.youtube-search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* YouTube Results */
+.youtube-results {
+  animation: fadeIn 0.5s ease;
+}
+
+.video-info {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.video-thumbnail {
+  width: 240px;
+  height: 135px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.video-details {
+  flex: 1;
+}
+
+.video-details h2 {
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+}
+
+.video-details p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0 0 20px 0;
+}
+
+.video-link {
+  display: inline-block;
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.video-link:hover {
+  transform: translateX(5px);
+}
+
+/* Lyrics Preview */
+.lyrics-preview {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.lyrics-preview h3 {
+  margin: 0 0 20px 0;
+  color: #ff0000;
+}
+
+.lyric-line {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lyric-line:last-child {
+  border-bottom: none;
+}
+
+.lyrics-info {
+  margin-top: 20px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.album-name {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.other-results {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.other-results h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.result-item {
+  padding: 8px 0;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.result-item:hover {
+  opacity: 1;
+}
