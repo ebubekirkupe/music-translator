@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #1a1a2e;
+      color: white;
+    }
+    
+    h1 {
+      font-size: 18px;
+      margin: 0 0 15px 0;
+      text-align: center;
+    }
+    
+    .status {
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .status.connected {
+      background: rgba(29, 185, 84, 0.2);
+      color: #1DB954;
+    }
+    
+    .status.disconnected {
+      background: rgba(255, 0, 0, 0.2);
+      color: #ff6b6b;
+    }
+    
+    .open-app-btn {
+      width: 100%;
+      padding: 10px;
+      background: #1DB954;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .open-app-btn:hover {
+      background: #1ed760;
+    }
+    
+    .current-track {
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    
+    .current-track h3 {
+      margin: 0 0 5px 0;
+      font-size: 14px;
+    }
+    
+    .current-track p {
+      margin: 3px 0;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Music Translator</h1>
+  
+  <div id="status" class="status disconnected">
+    Connecting...
+  </div>
+  
+  <button class="open-app-btn" id="openApp">
+    Open Music Translator
+  </button>
+  
+  <div id="currentTrack" class="current-track" style="display: none;">
+    <h3>Now Playing:</h3>
+    <p id="trackTitle">-</p>
+    <p id="trackArtist">-</p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

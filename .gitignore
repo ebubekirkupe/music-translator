@@ -1,0 +1,6 @@
+node_modules/
+.env
+.codespaces/
+.oryx/
+*.log
+.DS_Store
